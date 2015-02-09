@@ -3,6 +3,7 @@ from ubuntu
 WORKDIR /tmp
 COPY ../install-mangos.sh /tmp/install.sh
 COPY ./setup.sh /tmp/setup.sh
+COPY ./mangosd.conf /tmp/mangosd.conf
 
 RUN sudo apt-get install -y software-properties-common
 RUN sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
