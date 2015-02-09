@@ -12,4 +12,4 @@ RUN sudo apt-get install -y build-essential gcc g++ automake git-core autoconf m
 RUN /bin/sh /tmp/install.sh
 RUN /bin/sh /tmp/setup.sh
 
-CMD ["/opt/mangos-server/bin/mangosd"]
+CMD ["/opt/mangos-server/bin/realmd"]
