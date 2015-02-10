@@ -11,4 +11,5 @@ git clone https://github.com/mangostwo/database.git db
 cd db/_tools
 sh make_full_db.sh
 mysql --host=192.168.59.103 -u root -p mangos < full_db.sql
+
 ```
