@@ -1,16 +1,30 @@
 # mangostwo-docker
-An attempt at dockerizing mangostwo
+
+An attempt at dockerizing mangostwo - a world of warcraft server for wrath of the lich king (version 3.3.5).
+
+Read the instructions before you start, you may want to modify some of the steps to fit your needs better.
 
 # mangos base image
+
+The mangos folder contains a Dockerfile that is used to download and compile the latest mangostwo source code. Use this to build an image called "mangos-base".
 
 ```
 docker build -t mangos-base mangos
 ```
 
+# database
+
+```
+docker pull mysql
+docker run -i -p 3306:3306 --name mangos-mysql -e MYSQL_ROOT_PASSWORD=mangos -d mysql
+
+```
+
+See https://github.com/mangostwo/database for more info.
+
 # realm and world
 
 ```
-docker run -i -p 3306:3306 --name mangos-mysql -e MYSQL_ROOT_PASSWORD=mangos -d mysql
 docker build -t ilix/mangos-realmd:v1 realm
 docker build -t ilix/mangos-mangosd:v1 world
 git clone https://github.com/mangostwo/database.git db
