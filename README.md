@@ -4,14 +4,6 @@ An attempt at dockerizing mangostwo - a world of warcraft server for wrath of th
 
 Read the instructions before you start, you may want to modify some of the steps to fit your needs better.
 
-# mangos base image
-
-The mangos folder contains a Dockerfile that is used to download and compile the latest mangostwo source code. Use this to build an image called "mangos-base".
-
-```
-docker build -t mangos-base mangos
-```
-
 # database
 
 ```
@@ -22,7 +14,17 @@ docker run -i -p 3306:3306 --name mangos-mysql -e MYSQL_ROOT_PASSWORD=mangos -d 
 
 See https://github.com/mangostwo/database for more info.
 
+# mangos base image
+
+The mangos folder contains a Dockerfile that is used to download and compile the latest mangostwo source code. Use this to build an image called "mangos-base".
+
+```
+docker build -t mangos-base mangos
+```
+
 # realm and world
+
+Check the Dockerfiles in realm/ and /world. You want to use the image produced in the step above.
 
 ```
 docker build -t ilix/mangos-realmd:v1 realm
