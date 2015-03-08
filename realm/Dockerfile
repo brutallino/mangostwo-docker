@@ -1,4 +1,4 @@
-FROM tutum.co/alexanderczigler/mangos-base
+FROM mangos-base
 
 COPY ./realmd.conf /opt/mangos-server/etc/realmd.conf
 

@@ -16,7 +16,7 @@ See https://github.com/mangostwo/database for more info.
 
 # mangos base image
 
-The mangos folder contains a Dockerfile that is used to download and compile the latest mangostwo source code. Use this to build an image called "mangos-base".
+The mangos folder contains a Dockerfile that is used to download and compile the latest mangostwo source code. Use this to build an image called "mangos-base". Download, or extract, the necessary game data files before running this step and place them inside mangos/data
 
 ```
 docker build -t mangos-base mangos
@@ -34,8 +34,8 @@ cd db/_tools
 sh make_full_db.sh
 mysql --host=192.168.59.103 -u root -p mangos < full_db.sql
 
-docker run -t -p 8085:8085 --link mangos-mysql:mangos-mysql <mangosd-id>
-docker run -t -p 3724:3724 --link mangos-mysql:mangos-mysql <realmd-id>
+docker run -t -p 8085:8085 --link mangos-mysql:mangos-mysql ilix/mangos-mangosd:v1
+docker run -t -p 3724:3724 --link mangos-mysql:mangos-mysql ilix/mangos-realmd:v1
 
 ```
 
