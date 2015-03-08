@@ -41,7 +41,7 @@ docker run -t -p 3724:3724 --link mangos-mysql:mangos-mysql <realmd-id>
 
 # other
 
-You will need World of Warcraft: Wrath of The Lich King (3.3.5a) to play on your dockerized mangos. Also, you need to open your realmlist.wtf and set the address to your docker host and of course, create a user in the realms db.
+You will need World of Warcraft: Wrath of The Lich King (3.3.5a) to play on your dockerized mangos. Also, you need to open your realmlist.wtf and set the address to your docker host. To add a user account, modify and run the following in your realm db.
 
 ```
 INSERT INTO realmd.`account` (`username`,`sha_pass_hash`) VALUES ('ilix', SHA1(CONCAT(UPPER('ilix'),':',UPPER('mangos'))))

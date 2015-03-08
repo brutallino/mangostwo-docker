@@ -1,9 +1,6 @@
 FROM mangos-base
 
-COPY ./setup.sh /tmp/setup.sh
-COPY ./mangosd.conf /tmp/mangosd.conf
-
-RUN /bin/sh /tmp/setup.sh
+COPY ./mangosd.conf /opt/mangos-server/etc/mangosd.conf
 
 EXPOSE 8085
 CMD ["/opt/mangos-server/bin/mangosd"]
